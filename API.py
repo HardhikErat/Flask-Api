@@ -20,11 +20,12 @@ def index():
 
 def star():
     name = request.args.get("star_names")
-    star_data = next(item for item in data if item["star_names"]== name)
+    star_data = [item for item in data if item["name"]== name]
     return jsonify({
         "data":star_data,
         "message":"success"
     }),200
+    # add
 
 # CODE FOR RUNNING THE API
 if __name__ == "__main__":
